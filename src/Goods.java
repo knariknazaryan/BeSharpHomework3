@@ -4,17 +4,21 @@ public  class Goods extends  Factory {
 	private int itemCost;
 	private int itemPrice;
 	private int countOfSoldItems;
+	private int numberOfProducedItems;
+	private int overallNumberOfProducedItems = 0;
 
 	Goods() {
 		super();
 	}
-	Goods(String itemColor, String itemMaterial, int itemCost, int itemPrice, int countOfSoldItems, String departamentName) {
+	Goods(String itemColor, String itemMaterial, int itemCost, int itemPrice, int countOfSoldItems, int numberOfProducedItems, int overallNumberOfProducedItems, String departamentName) {
 		super(departamentName);
 		this.itemColor = itemColor;
 		this.itemName = itemMaterial;
 		this.itemCost = itemCost;
 		this.itemPrice = itemPrice;
 		this.countOfSoldItems = countOfSoldItems;
+		this.numberOfProducedItems = numberOfProducedItems;
+		this.overallNumberOfProducedItems += numberOfProducedItems;
 	}
 
 	public String getItemColor() {
@@ -35,6 +39,14 @@ public  class Goods extends  Factory {
 
 	public int getCountOfSoldItems() {
 		return countOfSoldItems;
+	}
+
+	public int getNumberOfProducedItems() {
+		return numberOfProducedItems;
+	}
+
+	public int getOverallNumberOfProducedItems() {
+		return overallNumberOfProducedItems;
 	}
 
 	public Goods setItemColor(String itemColor) {
@@ -60,6 +72,17 @@ public  class Goods extends  Factory {
 	public Goods setCountOfSoldItems(int countOfSoldItems) {
 		this.countOfSoldItems = countOfSoldItems;
 		return this;
+	}
+
+	public Goods setNumberOfProducedItems(int numberOfProducedItems) {
+		this.numberOfProducedItems = numberOfProducedItems;
+		return this;
+	}
+
+	public int setOverallNumberOfProducedItems(int overallNumberOfProducedItems) {
+		this.overallNumberOfProducedItems = overallNumberOfProducedItems + getNumberOfProducedItems();
+		return  overallNumberOfProducedItems;
+
 	}
 
 	@Override

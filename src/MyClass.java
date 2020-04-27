@@ -52,18 +52,22 @@ public class MyClass {
 				.setSalaryPerDay(28)
 				.setCountOfWorkingDays(16);
 
+		AccountantStaff accountant = AccountantStaff.greetingClients();
 		Goods item1 = new Goods()
 				.setItemColor("blue")
 				.setItemName("sweater")
-				.setItemCost(34).setItemPrice(50)
-				.setCountOfSoldItems(12);
+				.setItemCost(34)
+				.setItemPrice(50)
+				.setCountOfSoldItems(12)
+				.setNumberOfProducedItems(23);
 
 		Goods item2 = new Goods()
 				.setItemColor("red")
 				.setItemName("socks")
 				.setItemCost(4)
 				.setItemPrice(7)
-				.setCountOfSoldItems(30);
+				.setCountOfSoldItems(30)
+				.setNumberOfProducedItems(45);
 
 			employee1.countTheSalaryOfEmployee();
 			employee2.countTheSalaryOfEmployee();
@@ -73,5 +77,7 @@ public class MyClass {
 			item2.countThePriceOfSoldItems();
 			item2.countTheCostOfSoldItems();
 			item2.countTheProfit();
+			item2.getOverallNumberOfProducedItems();
+			System.out.println(accountant.greetingClients);
 		}
 	}

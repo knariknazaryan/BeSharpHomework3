@@ -1,4 +1,4 @@
-public abstract class Staff implements Accountant{
+public abstract class Staff implements Accountant {
 	private String name;
 	private String position;
 	private int salaryPerDay;
