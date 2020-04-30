@@ -1,6 +1,6 @@
 public class MyClass {
 	public static void main(String[] args) {
-		Staff employee1 = new Staff() {
+		Employee employee1 = new Employee() {
 			@Override
 			public double countTheNumberOfProducedItems() {
 				return 0;
@@ -26,7 +26,7 @@ public class MyClass {
 				.setSalaryPerDay(35)
 				.setCountOfWorkingDays(24);
 
-		Staff employee2 = new Staff() {
+		Employee employee2 = new Employee() {
 			@Override
 			public double countTheNumberOfProducedItems() {
 				return 0;
@@ -52,14 +52,14 @@ public class MyClass {
 				.setSalaryPerDay(28)
 				.setCountOfWorkingDays(16);
 
-		AccountantStaff accountant = AccountantStaff.greetingClients();
 		Goods item1 = new Goods()
 				.setItemColor("blue")
 				.setItemName("sweater")
 				.setItemCost(34)
 				.setItemPrice(50)
 				.setCountOfSoldItems(12)
-				.setNumberOfProducedItems(23);
+				.setNumberOfProducedItems(23)
+				.setSeasonOfTheItem("winter");
 
 		Goods item2 = new Goods()
 				.setItemColor("red")
@@ -67,10 +67,12 @@ public class MyClass {
 				.setItemCost(4)
 				.setItemPrice(7)
 				.setCountOfSoldItems(30)
-				.setNumberOfProducedItems(45);
+				.setNumberOfProducedItems(45)
+				.setSeasonOfTheItem("Spring");
 
 			employee1.countTheSalaryOfEmployee();
 			employee2.countTheSalaryOfEmployee();
+			employee1.goToWork(Weekday.THURSDAY);
 			item1.countThePriceOfSoldItems();
 			item1.countTheCostOfSoldItems();
 			item1.countTheProfit();
@@ -78,6 +80,7 @@ public class MyClass {
 			item2.countTheCostOfSoldItems();
 			item2.countTheProfit();
 			item2.getOverallNumberOfProducedItems();
-			System.out.println(accountant.greetingClients);
+			item1.defineTheSale(Season.SPRING);
+
 		}
 	}
